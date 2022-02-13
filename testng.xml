@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="test1">
-        <parameter name="arrayValues" value="(1+2)×3−40÷5="></parameter>
-        <parameter name="expect" value="1"></parameter>
-    <classes>
-        <class name ="test1"></class>
-    </classes>
-    </test>
-    <test name="test4">
-        <parameter name="arrayValues" value="6÷0="></parameter>
-        <parameter name="expect" value="Infinity"></parameter>
-     <classes>
-        <class name ="test1"></class>
-     </classes>
-    </test>
-    <test name="test5">
-        <parameter name="arrayValues" value="sin="></parameter>
-        <parameter name="expect" value="Error"></parameter>
+    <test name="tests.test1">
+        <parameter name="arrayValues" value="(1 + 2) × 3 − 40 ÷ 5 ="></parameter>
+        <parameter name="expectMemory" value="(1 + 2) × 3 - 40 ÷ 5 ="></parameter>
+        <parameter name="expectResult" value="1"></parameter>
         <classes>
-            <class name ="test1"></class>
+            <class name ="tests.test1"></class>
+        </classes>
+    </test>
+
+    <test name="test2">
+        <parameter name="arrayValues" value="6 ÷ 0 ="></parameter>
+        <parameter name="expectMemory" value="6 ÷ 0 ="></parameter>
+        <parameter name="expectResult" value="Infinity"></parameter>
+        <classes>
+            <class name ="tests.test2"></class>
+        </classes>
+    </test>
+
+    <test name="tests.test3">
+        <parameter name="arrayValues" value="sin="></parameter>
+        <parameter name="expectMemory" value="sin() ="></parameter>
+        <parameter name="expectResult" value="Error"></parameter>
+
+        <classes>
+            <class name ="tests.test3"></class>
         </classes>
     </test>
 
