@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,13 +30,7 @@ public class mainPage extends PageFactory {
 
     public void clickButtonCalc(String arrayValues){
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);//ожидаем полной загрузки старницы
-        // запасной вариант ,переводим текстовый параметр теста в массив символов если пример разделить пробелами
-         /*   String[] array = arrayValues.split(" ");
-               for (int i=0; i < array.length; i++){ //ищем все элементы и кликаем по ним
-                    WebElement element1 = driver.findElement(By.xpath("//div[text()='" + array[i] + "']"));
-                    element1.click();
-                 }*/
-        String b = arrayValues.replaceAll(" ", "");//разбиваем пример? убираем пробелы
+        String b = arrayValues.replaceAll(" ", "");//разбиваем пример. убираем пробелы
         Pattern p = Pattern.compile("[a-zA-Z]+|\\d|\\D");// разделяем строку на слова(sin...) и символы
         Matcher m1 = p.matcher(b);
         ArrayList<String> arrayList = new ArrayList<>();// получаем массив названий кнопок для нажатий

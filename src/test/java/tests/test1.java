@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -26,7 +27,6 @@ public class test1 {
             page.clickButtonCalc(arrayValues);
             Assert.assertEquals(page.checkArray(arrayValues),expectMemory);
             Assert.assertEquals(page.checkExpect(arrayValues,expectResult),expectResult);
-            //Thread.sleep(1000);
             } catch (Exception e) {
             System.out.println("что-то гдето поламалось " + e.getMessage());
         }
